@@ -7,6 +7,7 @@ import javax.persistence.*;
 
 @Getter
 @Setter
+// delete NoArgsConstructor
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -18,8 +19,14 @@ public class AccountEntity {
     @GeneratedValue
     private Long id;
     @Column(unique = true)
+    // @NotNull
+    // Size(max=20)
     private String login;
+    // @NotNull
+    // format / Regexp
     private String password;
+    // @Column(unique = true)
+    // @NotNull
     private String email;
     @Enumerated(EnumType.STRING)
     private Role role;

@@ -6,6 +6,7 @@ import javax.persistence.*;
 
 @Getter
 @Setter
+// delete NoArgsConstructor
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -17,9 +18,11 @@ public class UserEntity {
     @GeneratedValue
     private Long id;
     @Column(unique = true)
+    // Size
+    // NotNull
     private String name;
     @OneToOne(cascade = CascadeType.PERSIST)
-    @JoinColumn(name = "ACCOUNT_ENTITY_ID", unique = true)
+    @JoinColumn(name = "accountEntityId", unique = true)
     private AccountEntity account;
 
 
