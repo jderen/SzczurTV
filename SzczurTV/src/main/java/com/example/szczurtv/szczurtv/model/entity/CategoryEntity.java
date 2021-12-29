@@ -7,27 +7,32 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Builder
-@Table
+@Table(name="Category")
 @AllArgsConstructor
 @Getter
 @Setter
 public class CategoryEntity {
     @Id
     @GeneratedValue
-    private long id;
+    private Long id;
 
-    @NotNull
+    @NotBlank
     private String name;
 
-    @NotNull
+    @NotBlank
     @Size(max = 255)
     private String description;
 
     @Enumerated(EnumType.STRING)
     private Tag tag;
+
+    @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "category")
+    private List<ChannelEntity> channels = new ArrayList<>();
 }
