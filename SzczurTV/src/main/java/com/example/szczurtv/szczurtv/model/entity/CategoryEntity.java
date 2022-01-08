@@ -20,7 +20,7 @@ import java.util.List;
 @Setter
 public class CategoryEntity {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotBlank

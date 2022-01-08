@@ -18,7 +18,7 @@ import java.util.List;
 @Setter
 public class UserChannelEntity {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ElementCollection(fetch = FetchType.EAGER)

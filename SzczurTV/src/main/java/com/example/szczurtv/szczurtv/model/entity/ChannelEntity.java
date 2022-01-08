@@ -19,7 +19,7 @@ import java.util.List;
 @Setter
 public class ChannelEntity {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private long numberOfFollowers;

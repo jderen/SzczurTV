@@ -1,9 +1,6 @@
 package com.example.szczurtv.szczurtv.model.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -16,9 +13,10 @@ import java.util.List;
 @AllArgsConstructor
 @Getter
 @Setter
+@NoArgsConstructor
 public class UserEntity {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotBlank
